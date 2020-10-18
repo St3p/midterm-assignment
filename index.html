@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- // Stephanie Zepeda
+  // 190735@llinstitute.com
+  // 12/10/2020 -->
+<title> Bill with 15% VAT</title>
+<h2> Bill with 15% VAT</h2>
+<link rel="stylesheet" href="mystyle.css">
+
+</head>
+
+<body>
+  <p></p>
+  <label for="item">item:</label> <br />
+  <input type="text" id="item" name="item"/> <br />
+  <br />
+  <label for="price">price:</label> <br />
+  <input type="text" id="price" name="price"/> <br />
+  <br />
+  <label for="url">image URL:</label> <br />
+  <input type="text" id="url" name="url"/> <br />
+  <br />
+  <button type="button" onclick="quoteList.addItem();">Add</button><br />
+  <button type="button" onclick="quoteList.eraseAll();">Erase all</button><br />
+
+
+  <p id="demo"></p>
+
+
+<script src="vat.js"></script>
+</body>
+</html>
