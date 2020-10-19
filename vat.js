@@ -16,21 +16,24 @@ class  Quote{
       add(){
         var i, text;
         var len = this.item.length;
-        text = "<table><tr><th colspan='4'> Bill with 15% VAT </th></tr>";
-        text += "<tr><td> item </td>";
-        text += "<td>price</td>";
-        text += "<td>image</td>";
-        text += "<td>delete Item</td></tr>";
+        var k = 1;
+        text = "<table><tr><th colspan='5'> Bill with 15% VAT </th></tr>";
+        text += "<td colspan='2'>Item</td>";
+        text += "<td>Price</td>";
+        text += "<td>Image</td>";
+        text += "<td>Delete Item</td></tr>";
 
         for (i=0; i < len; i++) {
           var item = this.item[i];
           var price = this.price[i];
           var url = this.url[i];
           var button = '<button type="button" onclick="quoteList.deleteItem('+ i +');">delete item</button>';
-          text += "<tr><td>" + item + "</td>";
+          text += "<tr><td>" + "# " + k + "</td>";
+          text += "<td>" + item + "</td>";
           text += "<td>" + "$" + price + "</td>";
           text += "<td>" + "<img src=" + url + " alt='alternatetext' style='width:100px;height:100px;'>" + "</td>";
-          text += "<td>" + "$" + button + "</td></tr>";
+          text += "<td>" + button + "</td></tr>";
+          k++;
         }
         var j;
         var sum = 0;
@@ -42,11 +45,11 @@ class  Quote{
         var vat = (15 * sum) / 100;
         var total = sum + vat;
         text += "<tr><td>" + "Sub-total" + "</td>";
-        text += "<td colspan='3'>" + "$" + sum + "</td></tr>";
+        text += "<td colspan='4'>" + "$" + sum + "</td></tr>";
         text += "<tr><td>" + "VAT" + "</td>";
-        text += "<td colspan='3'>" + "$" + vat + "</td></tr>";
+        text += "<td colspan='4'>" + "$" + vat + "</td></tr>";
         text += "<tr><td>" + "Total" + "</td>";
-        text += "<td colspan='3'>" + "$" + total + "</td></tr>";
+        text += "<td colspan='4'>" + "$" + total + "</td></tr>";
 
         text += "</table>";
         console.log(text);
